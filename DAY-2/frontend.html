@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>frontend</title>
+    <style>
+        .header{
+            display: flex;
+            height: auto;
+            width: 80%;
+            margin-top: 45px;
+            color: rgb(5, 3, 3);
+            justify-content: space-between;
+            align-items: center;
+            margin: auto;
+            background-color: rgb(245, 148, 20);
+            border-radius: 15px;
+            padding: 12px;
+        }
+        .header>div:nth-child(1){
+/* margin-left: 47px; */
+margin-top: -12px;
+/* justify-content: space-between; */
+
+        }
+        .header>div:nth-child(2){
+margin-left: 47px;
+margin-top: -12px;
+        }
+        h1{
+            display: block;
+            margin: auto;
+            /* background-color: red; */
+            text-align: center;
+        }
+        #container{
+            display: flex;
+            flex-wrap: wrap;
+            margin: auto;
+            justify-content: space-between;
+            margin-top: 45px;
+        }
+        #container>div{
+            margin-top: 35px;
+            border: 3px solid gray;
+            text-align: center
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div>
+            <a href="frontend.html">  <h2>Frontend</h2></div> </a>
+           
+
+        <div>
+            <a href="backend.html"> <h2 >Backend</h2></a>
+        
+        
+        </div>
+    </div>
+    <h1>Frontend</h1>
+    <div id="container">
+
+    </div>
+</body>
+</html>
+<script>
+var investordata = JSON.parse(localStorage.getItem("investordata"))
+ investordata.forEach(function(ele) {
+     let box=document.createElement("div");
+     let name=document.createElement("h2");
+     name.innerText=ele.investorname
+     let imgurl=document.createElement("img");
+     imgurl.setAttribute("src",ele.investorimgurl)
+     let role=document.createElement("h1");
+     role.innerText=ele.investorrole
+     let logourl=document.createElement("img");
+     logourl.setAttribute("src",ele.investorlogourl)
+      
+     box.append(name,imgurl,logourl,role)
+     document.querySelector("#container").append(box)
+ });
+</script>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>backend</title>
+    <style>
+        .header {
+            display: flex;
+            height: auto;
+            width: 80%;
+            margin-top: 45px;
+            color: rgb(5, 3, 3);
+            justify-content: space-between;
+            /* margin: auto; */
+            background-color: rgb(245, 148, 20);
+            border-radius: 15px;
+        }
+
+        .header>div:nth-child(1) {
+            /* margin-left: 47px; */
+            margin-top: -12px;
+            /* justify-content: space-between; */
+
+        }
+
+        #backend {
+            display: flex;
+            margin-top: 15px;
+            margin: auto;
+            background-color: green;
+            border: 1px solid red;
+            align-items: center;
+            justify-content: center;
+            height: 75px;
+            border-radius: 10px;
+        
+        }
+
+        .header>div:nth-child(2) {
+            margin-left: 47px;
+            margin-top: -12px;
+        }
+        h1{
+            text-align: center;
+        }
+        #form>input{
+            height: 45px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div>
+            <a href="frontend.html">
+                <h2>Frontend</h2>
+        </div> </a>
+
+
+        <div>
+            <a href="backend.html">
+                <h2>Backend</h2>
+            </a>
+
+
+        </div>
+    </div>
+    <h1>Backend</h1>
+    <div id="backend">
+        <form action="" id="form">
+            <input id="name" type="text" placeholder="Enter name">
+            <input id="image" type="text" placeholder=" inv Image url">
+            <input id="logo" type="text" placeholder="Company logo url">
+            <input id="role" type="text" placeholder="role">
+            <input id="submit" type="submit" value="Submit">
+        </form>
+        <!-- <button class="button">submit</button> -->
+
+    </div>
+</body>
+
+</html>
+<script>
+    document.querySelector("#form")
+    document.querySelector("#submit").addEventListener("click", complete)
+
+    let arr = [];
+
+    function complete() {
+        event.preventDefault()
+         let obj={
+            investorname: form.name.value,
+            investorimgurl: form.image.value,
+            investorlogourl: form.logo.value,
+            investorrole: form.role.value
+         }
+         arr.push(obj)
+         console.log(arr)
+         localStorage.setItem("investordata",JSON.stringify(arr)
+         )
+    }
+</script>
